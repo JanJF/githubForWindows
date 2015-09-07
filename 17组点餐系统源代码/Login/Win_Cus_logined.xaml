@@ -1,0 +1,45 @@
+﻿<Window x:Class="Login.Win_Cus_logined"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Win_Cus_logined" Height="647" Width="933" WindowStyle="None" ResizeMode="NoResize" MouseMove="Window_MouseMove">
+    <Grid Image.MouseEnter="ima_mouse_hand" MouseLeave="ima_mouse_arrow">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Login;component/res/MainPage.jpg" />
+        </Grid.Background>
+        <TextBox Height="27" HorizontalAlignment="Left" Margin="228,92,0,0" Name="tb_WSearch" VerticalAlignment="Top" Width="314" />
+        <Button Height="28"  Content="搜索" BorderThickness="0" HorizontalAlignment="Left" Margin="574,92,0,0" Name="bt_Wsearch" VerticalAlignment="Top" Width="64" Click="bt_Wsearch_Click">
+
+        </Button>
+        <Image Height="101" MouseLeftButtonDown = "img1_MouseLeftButtonDown" HorizontalAlignment="Left" Margin="195,198,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="120"  Source="/Login;component/res/3.png" />
+        <Image Height="101" MouseLeftButtonDown = "img2_MouseLeftButtonDown" HorizontalAlignment="Left" Margin="379,198,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="120" />
+        <Image Height="101" MouseLeftButtonDown = "img3_MouseLeftButtonDown" HorizontalAlignment="Left" Margin="566,198,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top" Width="120" />
+        <Image Height="101" MouseLeftButtonDown = "img4_MouseLeftButtonDown" HorizontalAlignment="Left" Margin="195,386,0,0" Name="image4" Stretch="Fill" VerticalAlignment="Top" Width="120" />
+        <Label Content="特定菜品8折" Height="28" HorizontalAlignment="Left" Margin="209,493,0,0" Name="label9" VerticalAlignment="Top" FontSize="13" />
+        <Label Content="xx店铺" Height="28" HorizontalAlignment="Left" Margin="209,515,0,0" Name="label10" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" />
+        <Image Height="101" MouseLeftButtonDown = "img5_MouseLeftButtonDown" HorizontalAlignment="Left" Margin="379,386,0,0" Name="image5" Stretch="Fill" VerticalAlignment="Top" Width="120" />
+        <Label Content="满200减20" Height="28" HorizontalAlignment="Left" Margin="398,493,0,0" Name="label11" VerticalAlignment="Top" FontSize="13" />
+        <Label Content="xx店铺" Height="28" HorizontalAlignment="Left" Margin="398,515,0,0" Name="label12" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" />
+        <Image Height="101" MouseLeftButtonDown = "img6_MouseLeftButtonDown" HorizontalAlignment="Left" Margin="566,386,0,0" Name="image6" Stretch="Fill" VerticalAlignment="Top" Width="120" />
+        <Label Content="积分折扣" Height="28" HorizontalAlignment="Left" Margin="589,493,0,0" Name="label13" VerticalAlignment="Top" FontSize="13" />
+        <Label Content="xx店铺" Height="28" HorizontalAlignment="Left" Margin="589,515,0,0" Name="label14" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" />
+        <RadioButton Content="地区搜索" Height="16" HorizontalAlignment="Left" Margin="228,121,0,0" Name="radioButton1" VerticalAlignment="Top" Checked="radioButton1_Checked_1" FontSize="13" />
+        <RadioButton Content="餐厅名搜索" Height="16" HorizontalAlignment="Left" Margin="333,121,0,0" Name="radioButton2" VerticalAlignment="Top" Checked="radioButton2_Checked_1" FontSize="13" />
+        <RadioButton Content="特色菜搜索" Height="16" HorizontalAlignment="Right" Margin="0,121,396,0" Name="radioButton3" VerticalAlignment="Top" Checked="radioButton3_Checked_1" FontSize="13" />
+        <Label Content="菜名" HorizontalAlignment="Left" Margin="224,309,0,241" Name="label2" FontSize="13" FontWeight="Bold" />
+        <Label Content="菜名" Height="28" HorizontalAlignment="Right" Margin="0,309,477,0" Name="label4" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" />
+        <Label Content="菜名" Height="28" HorizontalAlignment="Left" Margin="589,309,0,0" Name="label6" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" />
+        <Label Content="用户名称" FontStyle="Italic" MouseEnter="mouse_hand"  MouseLeave="mouse_arrows" MouseLeftButtonDown = "UserLabel_MouseLeftButtonDown" Height="28" HorizontalAlignment="Left" Margin="536,39,0,0" Name="lab_User" VerticalAlignment="Top" FontSize="14" />
+        <Label Content="尊敬的：" Height="28" HorizontalAlignment="Left" Margin="481,39,0,0" Name="label16" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" />
+        <Button Content="我的订单" Height="28" HorizontalAlignment="Left" Margin="634,39,0,0" Name="bt_myMenu" VerticalAlignment="Top" Width="65" Click="bt_myMenu_Click" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush />
+            </Button.Background>
+        </Button>
+        <Button Content="安全退出" Height="28" HorizontalAlignment="Right" Margin="0,39,139,0" Name="bt_exit" VerticalAlignment="Top" Width="67" Click="bt_exit_Click">
+            <Button.Background>
+                <ImageBrush />
+            </Button.Background>
+        </Button>
+        <Label Content=">>查看所有餐厅" Height="28" HorizontalAlignment="Left" Margin="103,573,0,0" Name="label17" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" MouseDoubleClick="All_Rest_Show"/>
+    </Grid>
+</Window>

@@ -1,0 +1,150 @@
+﻿<Window x:Class="Login.Win_MyMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="我的订单" Height="454" Width="657" ResizeMode="NoResize" WindowStyle="None" MouseMove="Window_MouseMove">
+    <Window.Resources>
+        <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+            <Style TargetType="DataGrid">
+                <!--网格线颜色-->
+                <Setter Property="CanUserResizeColumns" Value="false"/>
+                <Setter Property="Background" Value="#E6DBBB" />
+                <Setter Property="BorderBrush" Value="#d6c79b" />
+                <Setter Property="HorizontalGridLinesBrush">
+                    <Setter.Value>
+                        <SolidColorBrush Color="#d6c79b"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="VerticalGridLinesBrush">
+                    <Setter.Value>
+                        <SolidColorBrush Color="#d6c79b"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--标题栏样式-->
+            <!--<Style  TargetType="DataGridColumnHeader" >
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Background" Value="White" />
+        <Setter  Property="FontWeight"  Value="Bold"/>
+    </Style>-->
+
+            <Style TargetType="DataGridColumnHeader">
+                <Setter Property="SnapsToDevicePixels" Value="True" />
+                <Setter Property="MinWidth" Value="0" />
+                <Setter Property="MinHeight" Value="28" />
+                <Setter Property="Foreground" Value="#323433" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="DataGridColumnHeader">
+                            <Border x:Name="BackgroundBorder" BorderThickness="0,1,0,1" 
+                             BorderBrush="#e6dbba" 
+                              Width="Auto">
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <ContentPresenter  Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Path x:Name="SortArrow" Visibility="Collapsed" Data="M0,0 L1,0 0.5,1 z" Stretch="Fill"  Grid.Column="2" Width="8" Height="6" Fill="White" Margin="0,0,50,0" 
+                            VerticalAlignment="Center" RenderTransformOrigin="1,1" />
+                                    <Rectangle Width="1" Fill="#d6c79b" HorizontalAlignment="Right" Grid.ColumnSpan="1" />
+                                    <!--<TextBlock  Background="Red">
+                            <ContentPresenter></ContentPresenter></TextBlock>-->
+                                </Grid>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Height" Value="25"/>
+            </Style>
+            <!--行样式触发-->
+            <!--背景色改变必须先设置cellStyle 因为cellStyle会覆盖rowStyle样式-->
+            <Style  TargetType="DataGridRow">
+                <Setter Property="Background" Value="#F2F2F2" />
+                <Setter Property="Height" Value="25"/>
+                <Setter Property="Foreground" Value="Black" />
+                <Style.Triggers>
+                    <!--隔行换色
+                    <Trigger Property="AlternationIndex" Value="0" >
+                        <Setter Property="Background" Value="#e7e7e7" />
+                    </Trigger>
+                    <Trigger Property="AlternationIndex" Value="1" >
+                        <Setter Property="Background" Value="#f2f2f2" />
+                    </Trigger>-->
+
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="Green"/>
+                        <!--<Setter Property="Foreground" Value="White"/>-->
+                    </Trigger>
+
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Foreground" Value="Black"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!--单元格样式触发-->
+            <Style TargetType="DataGridCell">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="DataGridCell">
+                            <TextBlock TextAlignment="Center" VerticalAlignment="Center"  >
+                           <ContentPresenter />
+                            </TextBlock>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsSelected" Value="True">
+                        <!--<Setter Property="Background" Value="White"/>
+                <Setter Property="BorderThickness" Value="0"/>-->
+                        <Setter Property="Foreground" Value="Black"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Login;component/res/my_menu.jpg" />
+        </Grid.Background>
+        <DataGrid MouseDoubleClick="orderitem" AutoGenerateColumns="False" CanUserAddRows="False" Height="144" HorizontalAlignment="Left" Margin="12,61,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="582" >
+<DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="ID" Binding="{Binding ID}" Width="30"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="订单日期" Binding="{Binding order_date}" Width="120"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="所付金额" Binding="{Binding actually_pay}" Width="70"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="订单状态" Binding="{Binding order_state_str}" Width="120"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="接单餐厅" Binding="{Binding order_restaurant}" Width="120"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="去评价" Width="60" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Click="CheckBox_Click" Tag="{Binding order_description, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="删除订单" Width="60" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Click="cancel_order"  ></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,32,0,0" Name="textBlock1" Text="以下是您的历史订单：" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+        <Button Content="已阅" Height="23" HorizontalAlignment="Left" Margin="449,392,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" Height="170" HorizontalAlignment="Left" Margin="12,245,0,0" Name="dataGrid2" VerticalAlignment="Top" Width="393" SelectionChanged="dataGrid2_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="菜品名称" Binding="{Binding dish_name}" Width="130"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="菜品数量" Binding="{Binding dish_amount}" Width="130"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="菜品总价" Binding="{Binding total_pay}" Width="130"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="订单详情：" Height="28" HorizontalAlignment="Left" Margin="12,211,0,0" Name="label1" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" />
+    </Grid>
+</Window>

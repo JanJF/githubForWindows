@@ -1,0 +1,12 @@
+﻿<Window x:Class="Login.Win_Own_logined"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Win_Own_logined" Height="300" Width="300" ResizeMode="NoResize" WindowStyle="None" MouseMove="Window_MouseMove">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Login;component/res/Win_Own_logined.jpg" />
+        </Grid.Background>
+        <Button Content="进入我的餐厅首页" Height="38" Margin="70,109,67,0" Name="bt_Owner_home" VerticalAlignment="Top" Click="bt_Owner_home_Click" FontSize="14" Background="#FFDFEAF1"></Button>
+        <Button Content="进入餐厅后台管理" Height="38" Margin="70,184,67,0" Name="bt_Owner_back" VerticalAlignment="Top" Click="bt_Owner_back_Click" FontSize="14" Background="#FFDFEAF1"></Button>
+    </Grid>
+</Window>

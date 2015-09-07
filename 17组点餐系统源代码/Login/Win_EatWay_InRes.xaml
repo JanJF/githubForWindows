@@ -1,0 +1,29 @@
+﻿<Window x:Class="Login.Win_EatWay_InRes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Win_EatWay_InRes" Height="437" Width="536" WindowStyle="None" ResizeMode="NoResize" MouseMove="Window_MouseMove">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Login;component/res/Win_EatWay_InRes.jpg" />
+        </Grid.Background>
+        <Label Content="尊敬的顾客，您选择到店用餐，请选择座位信息：" Height="28" HorizontalAlignment="Left" Margin="95,34,0,0" Name="label1" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+        <Label Content="餐桌类型" Height="28" HorizontalAlignment="Left" Margin="135,77,0,0" Name="label2" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" />
+        <Label Content="2人桌" Height="28" HorizontalAlignment="Left" Margin="142,123,0,0" Name="label3" VerticalAlignment="Top" FontSize="13" />
+        <Label Content="4人桌" Height="28" HorizontalAlignment="Left" Margin="142,164,0,0" Name="label4" VerticalAlignment="Top" FontSize="13" />
+        <Label Content="8人桌" Height="28" HorizontalAlignment="Left" Margin="142,200,0,0" Name="label5" VerticalAlignment="Top" FontSize="13" />
+        <Label Content="12人桌" Height="28" HorizontalAlignment="Left" Margin="135,237,0,0" Name="label6" VerticalAlignment="Top" FontSize="13" />
+        <Label Content="店内剩余数量" Height="28" HorizontalAlignment="Right" Margin="0,77,236,0" Name="label7" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" />
+        <RadioButton Content="选择" Height="16" HorizontalAlignment="Left" Margin="324,135,0,0" Name="radioButton1" VerticalAlignment="Top" Checked="radioButton1_Checked" />
+        <RadioButton Content="选择" Height="16" HorizontalAlignment="Left" Margin="324,173,0,0" Name="radioButton2" VerticalAlignment="Top" Checked="radioButton2_Checked" />
+        <RadioButton Content="选择" Height="16" HorizontalAlignment="Left" Margin="324,212,0,0" Name="radioButton3" VerticalAlignment="Top" Checked="radioButton3_Checked" />
+        <RadioButton Content="选择" Height="16" HorizontalAlignment="Left" Margin="324,249,0,0" Name="radioButton4" VerticalAlignment="Top" Checked="radioButton4_Checked" />
+        <Label Content="您已选择：" Height="28" Margin="120,282,330,0" Name="label8" VerticalAlignment="Top" FontSize="13" />
+        <Label Content="" Height="28" HorizontalAlignment="Left" Margin="187,282,0,0" Name="lab_choose" VerticalAlignment="Top" FontWeight="Bold" FontSize="13"  />
+        <Button Content="确定" Height="25" HorizontalAlignment="Left" Margin="151,373,0,0" Name="button1" VerticalAlignment="Top" Width="75" FontSize="14" Click="button1_Click_1"  />
+        <Button Content="取消" Height="25" HorizontalAlignment="Left" Margin="268,373,0,0" Name="button2" VerticalAlignment="Top" Width="75" FontSize="14"  Click="button2_Click" />
+        <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="206,130,0,0" Name="lab_2" VerticalAlignment="Top" Width="82" />
+        <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="206,164,0,0" Name="lab_4" VerticalAlignment="Top" Width="82" />
+        <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="206,201,0,0" Name="lab_8" VerticalAlignment="Top" Width="82" />
+        <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="206,244,0,0" Name="lab_12" VerticalAlignment="Top" Width="82" />
+    </Grid>
+</Window>
